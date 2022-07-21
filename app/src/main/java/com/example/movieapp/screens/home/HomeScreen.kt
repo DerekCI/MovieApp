@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.movieapp.MovieRow
+import com.example.movieapp.widgets.MovieRow
 import com.example.movieapp.model.Movie
 import com.example.movieapp.model.getMovies
 import com.example.movieapp.navigation.MovieScreens

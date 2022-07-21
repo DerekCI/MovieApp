@@ -9,7 +9,8 @@ data class Movie(val id: String,
                  val plot: String,
                  val poster: String,
                  val images: List<String>,
-                 val rating: String)
+                 val rating: String) {
+}
 
 fun getMovies(): List<Movie> {
     return listOf(
