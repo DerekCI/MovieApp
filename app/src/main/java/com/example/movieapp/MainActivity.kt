@@ -1,6 +1,5 @@
 package com.example.movieapp
 
-import android.graphics.Movie
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -21,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.movieapp.model.Movie
 import com.example.movieapp.navigation.MovieNavigation
 import com.example.movieapp.ui.theme.MovieAppTheme
 
@@ -43,13 +43,13 @@ fun MyApp(content: @Composable ()-> Unit){
 }
 
 @Composable
-fun MovieRow(movie: String, onItemClick: (String) -> Unit = {} ){
+fun MovieRow(movie: Movie, onItemClick: (String) -> Unit = {} ){
     Card(modifier = Modifier
         .padding(4.dp)
         .fillMaxWidth()
         .height(130.dp)
         .clickable {
-            onItemClick(movie)
+            onItemClick(movie.id)
         }, shape = RoundedCornerShape(corner = CornerSize(12.dp)), elevation = 6.dp) {
         
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
@@ -58,7 +58,7 @@ fun MovieRow(movie: String, onItemClick: (String) -> Unit = {} ){
                 .size(100.dp), shape = RectangleShape, elevation = 4.dp) {
                 Icon(imageVector = Icons.Default.AccountBox, contentDescription = "Movie icon")
             }
-            Text(text = movie)
+            Text(text = movie.title)
         }
 
         
